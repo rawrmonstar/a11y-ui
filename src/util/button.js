@@ -2,6 +2,12 @@ export function makeButtonHandlers(handleEvent) {
   return {
     onClick: handleEvent,
     onKeyDown: event => {
+      if (event.key === " ") {
+        // Spacebar normally causes a page down scroll on non-interactive
+        // elements (e.g., a span), so we want to prevent it.
+        event.preventDefault();
+      }
+
       if (event.key !== "Enter") return;
 
       event.preventDefault();
