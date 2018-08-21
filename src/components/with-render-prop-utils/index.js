@@ -1,15 +1,20 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import { noop } from "../../util/fn";
 
 /**
  * Helper HOC to wrap every parent render prop component. Manages state and the
  * calling of any onChange callback provided. Highly influenced by Kent C Dodd's
- * workshops and work with Downshift
+ * workshops and work with Downshift.
  */
 const withRenderPropUtils = (initState = {}) => Comp => {
   class RenderPropUtils extends Component {
     static displayName = `withRenderPropUtils(${Comp.displayName ||
       Comp.name})`;
+
+    static propTypes = {
+      onChange: PropTypes.func
+    };
 
     static defaultProps = {
       onChange: noop
