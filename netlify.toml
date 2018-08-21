@@ -1,0 +1,7 @@
+[Settings]
+ID = "b860cfa9-8ee0-4243-b9fa-8baebf83be87"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
