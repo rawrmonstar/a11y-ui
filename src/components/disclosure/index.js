@@ -6,7 +6,7 @@ import withRenderPropUtils from "../with-render-prop-utils";
 
 const initialState = { isExpanded: false };
 
-export default class Disclosure extends Component {
+class Disclosure extends Component {
   static propTypes = {
     isExpanded: PropTypes.bool,
     internalSetState: PropTypes.func,
@@ -40,6 +40,4 @@ export default class Disclosure extends Component {
   }
 }
 
-export const DisclosureWithRenderPropUtils = withRenderPropUtils(initialState)(
-  Disclosure
-);
+export default withRenderPropUtils(initialState)(Disclosure);

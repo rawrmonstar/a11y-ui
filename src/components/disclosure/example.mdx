@@ -4,8 +4,8 @@ route: /disclosure
 menu: Components
 ---
 
-import { Playground, PropsTable } from "docz";
-import DisclosureRaw, { DisclosureWithRenderPropUtils as Disclosure } from "./index";
+import { Playground } from "docz";
+import Disclosure from "./index";
 
 # Disclosure
 
@@ -36,7 +36,7 @@ import DisclosureRaw, { DisclosureWithRenderPropUtils as Disclosure } from "./in
 This is the only **required** prop. `children` is our render prop and must be a
 function. It is called with an object argument:
 
-- `getControlProps` - returns the props to be applied to control element 
+- `getControlProps` - returns the props to be applied to the control element 
   (e.g., a button)
 - `getContentProps` - returns the props to be applied to the content element
 - `isExpanded` - the current state of the disclosure
