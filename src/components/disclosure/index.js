@@ -8,19 +8,8 @@ const initialState = { isExpanded: false };
 
 export default class Disclosure extends Component {
   static propTypes = {
-    /**
-     * Manually manage `isExpanded` state by providing a boolean.
-     * Otherwise, this value is managed by the renderPropUtils HOC.
-     */
     isExpanded: PropTypes.bool,
-    /** 
-      Provided by renderPropUtils HOC
-     */
     internalSetState: PropTypes.func,
-    /**
-     * Render function which is called with prop getters and component state
-     * e.g., { getControlProps, getContentProps, isExpanded }
-     */
     children: PropTypes.func.isRequired
   };
 
