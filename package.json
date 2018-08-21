@@ -1,0 +1,37 @@
+{
+  "private": true,
+  "name": "a11y-ui",
+  "version": "0.0.1",
+  "description": "A collection of accessibility focused React components.",
+  "main": "index.js",
+  "scripts": {
+    "docz:dev": "docz dev",
+    "docz:build": "docz build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rawrmonstar/a11y-ui.git"
+  },
+  "keywords": [
+    "react",
+    "a11y",
+    "accessibility",
+    "component",
+    "library"
+  ],
+  "author": "Tegan Churchill",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rawrmonstar/a11y-ui/issues"
+  },
+  "homepage": "https://github.com/rawrmonstar/a11y-ui#readme",
+  "devDependencies": {
+    "docz": "^0.10.3",
+    "prop-types": "^15.6.2",
+    "react": "^16.4.2"
+  },
+  "peerDependencies": {
+    "react": "^16.0.0"
+  }
+}

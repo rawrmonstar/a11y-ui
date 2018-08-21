@@ -1,0 +1,53 @@
+---
+name: Disclosure
+route: /disclosure
+menu: Components
+---
+
+import { Playground, PropsTable } from "docz";
+import DisclosureRaw, { DisclosureWithRenderPropUtils as Disclosure } from "./index";
+
+# Disclosure
+
+> A disclosure is a button that controls visibility of a section of content
+—[WAI-ARIA-Practices-1.1](https://www.w3.org/TR/wai-aria-practices-1.1/#disclosure)
+
+## Basic Usage
+
+<Playground>
+  <Disclosure>
+    {({ getControlProps, getContentProps, isExpanded }) => (
+      <React.Fragment>
+        <button {...getControlProps()}>
+          {isExpanded ? "Collapse content 🙈" : "Show content 👀"}
+        </button>
+        <p {...getContentProps()} hidden={!isExpanded}>
+          Here is your content 😎
+        </p>
+      </React.Fragment>
+    )}
+  </Disclosure>
+</Playground>
+
+## Props
+
+**children** *function* required
+
+This is the only **required** prop. `children` is our render prop and must be a
+function. It is called with an object argument:
+
+- `getControlProps` - returns the props to be applied to control element 
+  (e.g., a button)
+- `getContentProps` - returns the props to be applied to the content element
+- `isExpanded` - the current state of the disclosure
+
+**isExpanded** *boolean*
+
+If you want the disclosure to be controlled, you can pass in a boolean to 
+`isExpanded` and the component will honor the prop's value.
+
+**onChange** *function*
+
+Called whenever the component attempts a state change. If the component is
+is controlled (i.e., you are managing `isExpanded`), you should update 
+`isExpanded` based on this handler
