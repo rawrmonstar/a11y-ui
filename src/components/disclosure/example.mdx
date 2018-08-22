@@ -36,18 +36,18 @@ import Disclosure from "./index";
 This is the only **required** prop. `children` is our render prop and must be a
 function. It is called with an object argument:
 
-- `getControlProps` - returns the props to be applied to the control element 
+- `getControlProps` - returns the props to be applied to the control element
   (e.g., a button)
 - `getContentProps` - returns the props to be applied to the content element
 - `isExpanded` - the current state of the disclosure
 
 **isExpanded** *boolean*
 
-If you want the disclosure to be controlled, you can pass in a boolean to 
+If you want the disclosure to be controlled, you can pass in a boolean to
 `isExpanded` and the component will honor the prop's value.
 
 **onChange** *function*
 
 Called whenever the component attempts a state change. If the component is
-is controlled (i.e., you are managing `isExpanded`), you should update 
+is controlled (i.e., you are managing `isExpanded`), you should update
 `isExpanded` based on this handler

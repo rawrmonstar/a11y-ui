@@ -1,5 +1,5 @@
-import React, { Component } from "react";
 import PropTypes from "prop-types";
+import React, { Component } from "react";
 import { noop } from "../../util/fn";
 
 /**
@@ -65,7 +65,7 @@ const withRenderPropUtils = (initState = {}) => Comp => {
     };
 
     render() {
-      const { onChange, ...rest } = this.props;
+      const { onChange, ...rest } = this.props; // eslint-disable-line no-unused-vars
       return (
         <Comp
           {...rest}

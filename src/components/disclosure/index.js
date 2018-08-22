@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { Component } from "react";
-import { generateID } from "../../util/id";
 import { makeButtonHandlers } from "../../util/button";
+import { generateID } from "../../util/id";
 import withRenderPropUtils from "../with-render-prop-utils";
 
 const initialState = { isExpanded: false };
