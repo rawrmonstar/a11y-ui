@@ -4,7 +4,6 @@ import filesize from "rollup-plugin-filesize";
 import resolve from "rollup-plugin-node-resolve";
 import external from "rollup-plugin-peer-deps-external";
 import { terser } from "rollup-plugin-terser";
-import url from "rollup-plugin-url";
 import pkg from "./package.json";
 
 export default {
@@ -23,13 +22,12 @@ export default {
   ],
   plugins: [
     external(),
-    url(),
     babel({
       exclude: "node_modules/**"
     }),
     resolve(),
     commonjs(),
-    terser({ mangle: { module: true } }),
-    filesize()
+    filesize(),
+    terser({ module: true, toplevel: true })
   ]
 };

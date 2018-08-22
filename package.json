@@ -7,8 +7,8 @@
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
   "scripts": {
-    "build": "rollup -c",
-    "start": "npm run docz:dev",
+    "build": "NODE_ENV=production rollup -c",
+    "start": "NODE_ENV=development npm run docz:dev",
     "check": "eslint .",
     "docz:dev": "docz dev",
     "docz:build": "docz build",
@@ -33,16 +33,14 @@
   },
   "homepage": "https://github.com/rawrmonstar/a11y-ui#readme",
   "devDependencies": {
-    "babel-core": "^6.26.3",
+    "@babel/core": "^7.0.0-rc.2",
+    "@babel/plugin-proposal-class-properties": "^7.0.0-rc.2",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0-rc.2",
+    "@babel/preset-env": "^7.0.0-rc.2",
+    "@babel/preset-react": "^7.0.0-rc.2",
     "babel-eslint": "^8.2.6",
-    "babel-plugin-external-helpers": "^6.22.0",
-    "babel-plugin-transform-class-properties": "^6.24.1",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.14",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-react": "^6.24.1",
     "docz": "^0.10.3",
-    "docz-plugin-babel6": "^0.10.3",
     "eslint": "^5.4.0",
     "eslint-config-prettier": "^3.0.1",
     "eslint-plugin-import": "^2.14.0",
@@ -55,13 +53,12 @@
     "prop-types": "^15.6.2",
     "react": "^16.4.2",
     "rollup": "^0.62.0",
-    "rollup-plugin-babel": "^3.0.7",
+    "rollup-plugin-babel": "^4.0.0-beta.8",
     "rollup-plugin-commonjs": "^9.1.3",
     "rollup-plugin-filesize": "^4.0.1",
     "rollup-plugin-node-resolve": "^3.3.0",
     "rollup-plugin-peer-deps-external": "^2.2.0",
-    "rollup-plugin-terser": "^1.0.1",
-    "rollup-plugin-url": "^1.4.0"
+    "rollup-plugin-terser": "^1.0.1"
   },
   "peerDependencies": {
     "react": "^16.0.0"
