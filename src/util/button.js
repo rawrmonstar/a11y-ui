@@ -24,8 +24,17 @@ function makeOnKeyUpHandler(handleEvent) {
   };
 }
 
-export function makeButtonHandlers(handleEvent, userProps = {}) {
+export function getButtonProps(handleEvent, userProps = {}) {
+  const props = {
+    "aria-disabled": userProps.disabled,
+    role: "button",
+    tabIndex: userProps.disabled ? "-1" : "0"
+  };
+
+  if (userProps.disabled) return props;
+
   return {
+    ...props,
     onClick: callEach(handleEvent, userProps.onClick),
     onKeyDown: callEach(makeOnKeyDownHandler(handleEvent), userProps.onKeyDown),
     onKeyUp: callEach(makeOnKeyUpHandler(handleEvent), userProps.onKeyUp)

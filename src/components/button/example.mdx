@@ -1,0 +1,47 @@
+---
+name: Button
+route: /button
+menu: Components
+---
+
+import { Playground } from "docz";
+import Button from "./index";
+
+# Alert
+
+> A button is a widget that enables users to trigger an action or event, such as
+> submitting a form, opening a dialog, canceling an action, or performing a
+> delete operation
+—[WAI-ARIA-Practices-1.1](https://www.w3.org/TR/wai-aria-practices-1.1/#button)
+
+> Please just use a real `<button>` 🙏
+—Tegan Churchill
+
+## Basic Usage
+
+<Playground>
+  <Button onClick={() => alert("💁‍ I'm a button in <span>'s clothing")}>
+    {({ getProps }) => (
+      <span {...getProps()}>What am I? 🤔</span>
+    )}
+  </Button>
+</Playground>
+
+## Props
+
+### children
+`function({})` | *required*
+
+This is the only **required** prop. `children` is our render prop and must be a
+function. It is called with an object argument:
+
+| **property**      | **type** | **description** |
+|-------------------|----------|-----------------|
+| `getProps` | function(props: object) | returns the props for the button element(e.g., a span) |
+
+### onClick
+`function(event)`
+
+Although not technically required, it's a good idea for a button do something
+when it's clicked. Add the click handler to the `<Button>` so the handler is
+called on the spacebar and enter presses, just like a real `<button>`!

@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import { Component } from "react";
-import { makeButtonHandlers } from "../../util/button";
+import { getButtonProps } from "../../util/button";
 import { generateID } from "../../util/id";
 import withRenderPropUtils from "../with-render-prop-utils";
 
@@ -18,10 +18,8 @@ class Disclosure extends Component {
   getControlProps = (userProps = {}) => ({
     "aria-controls": this.contentID,
     "aria-expanded": `${this.props.isExpanded}`,
-    role: "button",
-    tabIndex: "0",
     ...userProps,
-    ...makeButtonHandlers(this.toggleExpanded, userProps)
+    ...getButtonProps(this.toggleExpanded, userProps)
   });
 
   getContentProps = (userProps = {}) => ({
