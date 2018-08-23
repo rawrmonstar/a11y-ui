@@ -15,16 +15,18 @@ class Disclosure extends Component {
 
   contentID = `${generateID("disclosure")}--content`;
 
-  getControlProps = () => ({
+  getControlProps = (userProps = {}) => ({
     "aria-controls": this.contentID,
     "aria-expanded": `${this.props.isExpanded}`,
     role: "button",
     tabIndex: "0",
-    ...makeButtonHandlers(this.toggleExpanded)
+    ...userProps,
+    ...makeButtonHandlers(this.toggleExpanded, userProps)
   });
 
-  getContentProps = () => ({
-    id: this.contentID
+  getContentProps = (userProps = {}) => ({
+    id: this.contentID,
+    ...userProps
   });
 
   toggleExpanded = () => {
