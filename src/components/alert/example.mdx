@@ -1,0 +1,41 @@
+---
+name: Alert
+route: /alert
+menu: Components
+---
+
+import { Playground } from "docz";
+import Alert from "./index";
+
+# Alert
+
+> An alert is an element that displays a brief, important message in a way that
+> attracts the user's attention without interrupting the user's task
+—[WAI-ARIA-Practices-1.1](https://www.w3.org/TR/wai-aria-practices-1.1/#alert)
+
+## Basic Usage
+
+This is a very simple component and applies `role="alert"` to whatever element
+you decide to spread props on.
+
+<Playground>
+  <Alert>
+    {({ getProps }) => (
+      <div {...getProps()}>
+        <p>🚨 Here is some important info for you 📣</p>
+      </div>
+    )}
+  </Alert>
+</Playground>
+
+## Props
+
+### children
+`function({})` | *required*
+
+This is the only **required** prop. `children` is our render prop and must be a
+function. It is called with an object argument:
+
+| **property**      | **type** | **description** |
+|-------------------|----------|-----------------|
+| `getProps` | function(props: object) | returns the props for the alert element (e.g., a div) |
