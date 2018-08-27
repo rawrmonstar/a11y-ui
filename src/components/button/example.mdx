@@ -20,9 +20,15 @@ import Button from "./index";
 ## Basic Usage
 
 <Playground>
-  <Button onClick={() => alert("💁‍ I'm a button in <span>'s clothing")}>
+  <Button>
     {({ getProps }) => (
-      <span {...getProps()}>What am I? 🤔</span>
+      <span
+        {...getProps({
+          onClick: () => alert("💁‍ I'm a button in <span>'s clothing")
+        })}
+      >
+        What am I? 🤔
+      </span>
     )}
   </Button>
 </Playground>
@@ -33,15 +39,10 @@ import Button from "./index";
 `function({})` | *required*
 
 This is the only **required** prop. `children` is our render prop and must be a
-function. It is called with an object argument:
+function. It is called with an object argument. Passing in an onClick handler
+will result in spacebar and enter key listeners being applied as well–exactly
+how native `<button>` elements work.
 
 | **property**      | **type** | **description** |
 |-------------------|----------|-----------------|
 | `getProps` | function(props: object) | returns the props for the button element(e.g., a span) |
-
-### onClick
-`function(event)`
-
-Although not technically required, it's a good idea for a button do something
-when it's clicked. Add the click handler to the `<Button>` so the handler is
-called on the spacebar and enter presses, just like a real `<button>`!

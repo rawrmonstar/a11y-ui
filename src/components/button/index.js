@@ -4,13 +4,12 @@ import { getButtonProps } from "../../util/button";
 
 class Button extends Component {
   static propTypes = {
-    onClick: PropTypes.func,
     children: PropTypes.func.isRequired
   };
 
-  getProps = (userProps = {}) => ({
-    ...userProps,
-    ...getButtonProps(this.props.onClick, userProps)
+  getProps = ({ onClick, ...restOfUserProps } = {}) => ({
+    ...restOfUserProps,
+    ...getButtonProps(onClick, restOfUserProps)
   });
 
   render() {
